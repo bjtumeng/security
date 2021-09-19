@@ -1,0 +1,9 @@
+server:
+  port: 8081
+#  配置文件设置用户名和密码
+# 如果报错，说明文件不是utf-8，需要在file encoding中设置
+#spring:
+#  security:
+#    user:
+#      name: user
+#    password: user
