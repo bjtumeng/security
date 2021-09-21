@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--2.登陆完成，跳转到输出token的controller-->
+<form action="/update_token" method="post">
+    <!--  csrf每次请求都带着token值  -->
+    <input type="hidden" th:if="${_csrf}!=null" th:value="${_csrf.token}" name="_csrf"/>
+    <!-- name必须是username和password，否则spring security得不到用户名和密码 -->
+    用户名：<input type="text" name="username"><br/>
+    密码：<input type="text" name="password"><br/>
+    <button type="submit" >修改</button>
+</form>
+</body>
+</html>

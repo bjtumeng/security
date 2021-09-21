@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="hidden"th:if="${_csrf}!=null"th:value="${_csrf.token}"name="_csrf"/>
+   <form action="/user/login" method="post">
+       <!-- name必须是username和password，否则spring security得不到用户名和密码 -->
+       用户名：<input type="text" name="username"><br/>
+       密码：<input type="text" name="password"><br/>
+       <!-- name必须是remember-me      -->
+       <input type="checkbox" name="remember-me"><br/> 自动登陆
+       <input type="submit" value="login">
+   </form>
+</body>
+</html>
